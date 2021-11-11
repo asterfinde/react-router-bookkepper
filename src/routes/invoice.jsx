@@ -4,6 +4,8 @@ import { getInvoice, deleteInvoice } from "../data";
 export default function Invoice() {
   let navigate = useNavigate();
   let params = useParams();
+
+  // :invoiceId -> params.invoiceId
   let invoice = getInvoice(parseInt(params.invoiceId, 10));
 
   const onClickDeleteInvoice = () => {
