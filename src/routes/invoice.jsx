@@ -5,8 +5,9 @@ export default function Invoice() {
   let navigate = useNavigate();
   let params = useParams();
 
-  // from: 'to={`/invoices/${invoice.number}`}' in 'invoices.jsx'
-  // to: 'params.invoiceId'
+  // From: '<Route path=":invoiceId" element={<Invoice />} />' in main.jsx
+  // where routing to corresponding components
+  // To: 'params.invoiceId'
   let invoice = getInvoice(parseInt(params.invoiceId, 10));
 
   const onClickDeleteInvoice = () => {
