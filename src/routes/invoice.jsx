@@ -5,7 +5,8 @@ export default function Invoice() {
   let navigate = useNavigate();
   let params = useParams();
 
-  // :invoiceId -> params.invoiceId
+  // from: 'to={`/invoices/${invoice.number}`}' in 'invoices.jsx'
+  // to: 'params.invoiceId'
   let invoice = getInvoice(parseInt(params.invoiceId, 10));
 
   const onClickDeleteInvoice = () => {
