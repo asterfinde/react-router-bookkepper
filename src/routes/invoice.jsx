@@ -1,7 +1,8 @@
 /**
  * From: '<Route path=":invoiceId" element={<Invoice />} />' in 'main.jsx'
- *        where the routing is defined to the corresponding components
- * To  : 'params.invoiceId'
+ *        (where the routing is defined to the corresponding components)
+ *
+ * To  : Using 'useParams' hook to extract 'invoiceId' (params.invoiceId)
  *
  */
 
