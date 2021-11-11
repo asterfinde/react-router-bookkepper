@@ -1,16 +1,20 @@
-import { render } from "react-dom";
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from "react-router-dom";
-import App from "./App";
-import Expenses from "./routes/expenses";
-import Invoices from "./routes/invoices";
-import Invoice from "./routes/invoice";
-import About from "./routes/about";
+/**
+ * When routes have children it does two things:
+ * 1) It nests the URLs ("/" + "expenses" and "/" + "invoices")
+ * 2) It will nest the UI components for shared layout when the child route matches:
+ * However, before (2) will work we need to render an Outlet in the App.jsx "parent" route
+ * 
+ */
 
-const rootElement = document.getElementById("root")
+import { render } from 'react-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import App from './App';
+import Expenses from './routes/expenses';
+import Invoices from './routes/invoices';
+import Invoice from './routes/invoice';
+import About from './routes/about';
+
+const rootElement = document.getElementById('root');
 
 render(
   <BrowserRouter>
@@ -20,7 +24,7 @@ render(
           <Route
             index
             element={
-              <main style={{ padding: "1rem" }}>
+              <main style={{ padding: '1rem' }}>
                 <p>Select an invoice</p>
               </main>
             }
@@ -32,8 +36,10 @@ render(
 
         <Route path="about" element={<About />} />
 
-        <Route path="*" element={
-            <main style={{ padding: "1rem" }}>
+        <Route
+          path="*"
+          element={
+            <main style={{ padding: '1rem' }}>
               <p>There's nothing here!</p>
             </main>
           }
@@ -43,4 +49,6 @@ render(
   </BrowserRouter>,
 
   rootElement
-)
+);
+
+
