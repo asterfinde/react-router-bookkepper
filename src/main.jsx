@@ -4,6 +4,10 @@
  * 2) It will nest the UI components for shared layout when the child route matches:
  * However, before (2) will work we need to render an Outlet in the App.jsx "parent" route
  * 
+ * An <Outlet> renders whatever child route is currently active,
+ * so you can think about this <Outlet> as a placeholder for
+ * the child routes we defined above 
+ * 
  */
 
 import { render } from 'react-dom';
